@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaRushTasks:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaRushTasks_jar</output-path>
+    <root id="archive" name="JavaRushTasks.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task35/task3513/Main.java" />
+    </root>
+  </artifact>
+</component>
