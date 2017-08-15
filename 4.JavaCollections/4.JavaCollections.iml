@@ -10,5 +10,36 @@
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-annotations:2.9.0.pr2" level="project" />
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-core:2.9.0.pr2" level="project" />
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-databind:2.9.0.pr2" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../google-collections-0.9.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../lib/google-collections-0.9.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/com/javarush/task/task33/task3310/google-collections-0.9.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="com.google.guava:guava:22.0" level="project" />
+    <orderEntry type="library" name="org.apache.commons:commons-collections4:4.1" level="project" />
+    <orderEntry type="library" name="org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="junit:junit:4.12" level="project" />
   </component>
 </module>
