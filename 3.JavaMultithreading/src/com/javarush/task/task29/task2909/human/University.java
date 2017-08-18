@@ -12,46 +12,18 @@ public class University {
 
     }
 
-    public Student getStudentWithAverageGrade(double averageGrade) {
+    public Student getStudentWithAverageGrade() {
         //TODO:
-        Student result = null;
-        for (Student student : students) {
-            if (student.getAverageGrade() == averageGrade) {
-                result = student;
-                break;
-            }
-        }
-        return result;
+        return null;
     }
 
-    public Student getStudentWithMaxAverageGrade() {
+    public Student getStudentWithMaxAverageGrade(double averageGrade) {
         //TODO:
-        Student result = students.get(0);
-        double maxAverageGrade = students.get(0).getAverageGrade();
-        for (Student student : students) {
-            if (student.getAverageGrade() > maxAverageGrade) {
-                maxAverageGrade = student.getAverageGrade();
-                result = student;
-            }
-        }
-        return result;
+        return null;
     }
 
-    public Student getStudentWithMinAverageGrade() {
+    public void getStudentWithMinAverageGradeAndExpel() {
         //TODO:
-        Student result = students.get(0);
-        double minAverageGrade = students.get(0).getAverageGrade();
-        for (Student student : students) {
-            if (student.getAverageGrade() < minAverageGrade) {
-                minAverageGrade = student.getAverageGrade();
-                result = student;
-            }
-        }
-        return result;
-    }
-
-    public void expel(Student student) {
-        students.remove(student);
     }
 
     public void setAge(int age) {

@@ -6,11 +6,11 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Created by Serhii Boiko on 07.07.2017.
+ * Created by chumak on 28.07.17.
  */
 public class Waiter implements Observer {
     @Override
-    public void update(Observable o, Object arg) {
-        ConsoleHelper.writeMessage(arg.toString() + " was cooked by " + o.toString());
+    public void update(Observable cook, Object order) {
+        ConsoleHelper.writeMessage(order + " was cooked by " + cook);
     }
 }

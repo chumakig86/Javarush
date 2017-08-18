@@ -1,11 +1,12 @@
 package com.javarush.task.task29.task2909.human;
 
-public class Worker extends Human implements Alive {
+public class Worker implements Alive {
+    private Human human;
     private double salary;
-    private String company;
+    public String company;
 
     public Worker(String name, int age) {
-        super(name, age);
+        human = new Human(name, age);
     }
 
 
@@ -14,16 +15,8 @@ public class Worker extends Human implements Alive {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSlr(double salary) {
         this.salary = salary;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
     }
 
     @Override

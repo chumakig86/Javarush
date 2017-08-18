@@ -1,7 +1,9 @@
 package com.javarush.task.task27.task2712.kitchen;
 
+import java.util.Arrays;
+
 /**
- * Created by Serhii Boiko on 07.07.2017.
+ * Created by chumak on 25.07.17.
  */
 public enum Dish {
     Fish(25),
@@ -9,12 +11,10 @@ public enum Dish {
     Soup(15),
     Juice(5),
     Water(3);
-
     private int duration;
 
-
-    Dish(int i) {
-        duration = i;
+    Dish(int duration) {
+        this.duration = duration;
     }
 
     public int getDuration() {
@@ -23,10 +23,9 @@ public enum Dish {
 
     public static String allDishesToString() {
         String dishes = "";
-        for (int i = 0; i < Dish.values().length; i++) {
-            dishes += Dish.values()[i].toString();
-            if (i != Dish.values().length-1) dishes+=", ";
+        for (Dish dish : Dish.values()){
+            dishes += dish + ", ";
         }
-        return dishes;
+        return (dishes.length() != 0) ? dishes.substring(0, dishes.lastIndexOf(",")) : "";
     }
 }
