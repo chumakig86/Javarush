@@ -42,9 +42,9 @@ public class Horse {
     }
 
     public void print () {
-        for (int i = 0; i < distance; i++ ) {
+        for (int i = 1; i <= (int) Math.floor(distance); i++) {
             System.out.print(".");
         }
-        System.out.print("");
+        System.out.println(this.getName());
     }
 }
