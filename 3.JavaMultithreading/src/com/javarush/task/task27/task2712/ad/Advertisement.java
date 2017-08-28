@@ -1,7 +1,7 @@
 package com.javarush.task.task27.task2712.ad;
 
 /**
- * Created by Serhii Boiko on 08.07.2017.
+ * Created by chumak on 28.07.17.
  */
 public class Advertisement {
     private Object content;
@@ -11,41 +11,41 @@ public class Advertisement {
     private int duration;
     private long amountPerOneDisplaying;
 
-    public Advertisement(Object content, String name, long initialAmount, int hits, int duration) {
+    public Advertisement(Object content, String name, long initialAmount, int hits, int duration)
+    {
         this.content = content;
         this.name = name;
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
-        this.amountPerOneDisplaying = initialAmount / hits;
+        this.amountPerOneDisplaying = initialAmount/hits;
     }
 
-    public Object getContent() {
-        return content;
-    }
-
-    public long getInitialAmount() {
-        return initialAmount;
-    }
-
-    public int getHits() {
-        return hits;
-    }
-
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public int getDuration() {
+    public int getDuration()
+    {
         return duration;
     }
 
-    public long getAmountPerOneDisplaying() {
+    public long getAmountPerOneDisplaying()
+    {
         return amountPerOneDisplaying;
     }
 
-    public void revalidate() {
-        if (hits < 1) throw new UnsupportedOperationException();
+    public void revalidate()
+    {
+        if (hits <= 0)
+            throw new UnsupportedOperationException();
+
         hits--;
+    }
+
+    public int getHits()
+    {
+        return hits;
     }
 }

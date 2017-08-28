@@ -41,28 +41,8 @@ public class View extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-    String action = actionEvent.getActionCommand();
-    switch (action) {
-        case "Новый" :
-            controller.createNewDocument();
-            break;
-        case "Открыть" :
-            controller.openDocument();
-            break;
-        case "Сохранить" :
-            controller.saveDocument();
-            break;
-        case "Сохранить как..." :
-            controller.saveDocumentAs();
-            break;
-        case "Выход" :
-            controller.exit();
-            break;
-        case "О программе" :
-            showAbout();
+    public void actionPerformed(ActionEvent e) {
 
-    }
     }
     public void initMenuBar() {
         JMenuBar jMenuBar = new JMenuBar();
@@ -89,17 +69,7 @@ public class View extends JFrame implements ActionListener {
         initEditor();
         pack();
     }
-    public void selectedTabChanged() {
-        switch (tabbedPane.getSelectedIndex()) {
-            case 0:
-                controller.setPlainText(plainTextPane.getText());
-                break;
-            case 1:
-                plainTextPane.setText(controller.getPlainText());
-                break;
-        }
-        resetUndo();
-    }
+    public void selectedTabChanged() {}
     public View () {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -138,19 +108,4 @@ public class View extends JFrame implements ActionListener {
     public void resetUndo() {
         undoManager.discardAllEdits();
     }
-    public boolean isHtmlTabSelected() {
-        return tabbedPane.getSelectedIndex() == 0;
-    }
-
-    public void selectHtmlTab() {
-        tabbedPane.setSelectedIndex(0);
-        resetUndo();
-    }
-    public void update () {
-        htmlTextPane.setDocument(controller.getDocument());
-    }
-    public void showAbout() {
-        JOptionPane.showMessageDialog(getContentPane(), "My first GUI editor", "Information", JOptionPane.INFORMATION_MESSAGE);
-    }
-
 }

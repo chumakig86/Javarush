@@ -49,6 +49,18 @@ public class Snake {
     }
 
     public void move(int x, int y) {
+        SnakeSection new_section = new SnakeSection(sections.get(0).getX()+x, sections.get(0).getY()+y);
+        checkBorders(new_section);
+        checkBody(new_section);
+        if (isAlive == true) {
+            sections.add(0, new_section);
+            if ((Room.game.getMouse().getX() == new_section.getX()) && (Room.game.getMouse().getY() == new_section.getY())) {
+                Room.game.eatMouse();
+            } else {
+                sections.remove(sections.size() - 1);
+            }
+        }
+        return;
     }
 
     public int getX(){
@@ -56,5 +68,16 @@ public class Snake {
     }
     public int getY(){
         return sections.get(0).getY();
+    }
+    public void checkBorders(SnakeSection head) {
+    int headX = head.getX();
+    int headY = head.getY();
+    int widthRoom = Room.game.getWidth();
+    int heightRoom = Room.game.getHeight();
+        if (headX<0 || headX>=widthRoom || headY<0 || headY>=heightRoom) isAlive = false;
+
+    }
+    public void checkBody(SnakeSection head) {
+        if (sections.contains(head)) isAlive = false;
     }
 }

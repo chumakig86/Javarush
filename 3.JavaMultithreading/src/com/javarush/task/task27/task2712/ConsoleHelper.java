@@ -9,30 +9,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Serhii Boiko on 07.07.2017.
+ * Created by chumak on 26.07.17.
  */
 public class ConsoleHelper {
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void writeMessage(String message){
+    public static void writeMessage(String message) {
         System.out.println(message);
     }
+
     public static String readString() throws IOException {
-            return reader.readLine();
+        return reader.readLine();
     }
+
     public static List<Dish> getAllDishesForOrder() throws IOException {
-        List<Dish> dishes = new ArrayList<Dish>();
-        String dishName = "";
-        while (!dishName.equals("exit")) {
-            writeMessage(Dish.allDishesToString());
-            dishName = readString();
-            if (!dishName.equals("exit")) {
-                try {
-                    Dish d = Dish.valueOf(dishName);
+        List<Dish> dishes = new ArrayList<>();
+        ConsoleHelper.writeMessage("Выберите блюда. Для завершения наберите 'exit'.");
+        ConsoleHelper.writeMessage(Dish.allDishesToString());
+        while (true) {
+            String dishToOrder = readString();
+            if (dishToOrder.equalsIgnoreCase("exit")) {
+                break;
+            }
+//            try {
+//                dishes.add(Dish.valueOf(dishToOrder)); //?
+//            }
+//            catch (IllegalArgumentException e) {
+//                ConsoleHelper.writeMessage(dishToOrder + " is not detected");
+//            }
+            if(dishToOrder.isEmpty()){
+                writeMessage("Блюдо не выбрано");
+                continue;
+            }
+            boolean found = false;
+            for(Dish d : Dish.values())
+                if(d.name().equalsIgnoreCase(dishToOrder)) {
                     dishes.add(d);
-                } catch (Exception e) {
-                    writeMessage("Даного блюда нет!");
+                    found = true;
                 }
+            if(!found){
+                writeMessage("Нет такого блюда");
             }
         }
         return dishes;
